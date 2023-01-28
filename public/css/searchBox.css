@@ -1,5 +1,5 @@
 /*containerSearch*/
-	#containerSearch{
+	#containerSearch>form{
 		display: grid;
 		background-color:#8ECAE6;
 		height: 300px;
@@ -7,21 +7,21 @@
 		grid-template-rows: repeat(3, 1fr);
 	}
 	/*LABELS*/
-		#containerSearch>label[for^="vendedoras"]{
+		#containerSearch>form>label[for^="vendedoras"]{
 			grid-column: 2;
 			grid-row: 2;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 		}
-		#containerSearch>label[for="totMesText"]{
+		#containerSearch>form>label[for="totMesText"]{
 			grid-column: 5/6;
 			grid-row: 2/3;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 		}
-		#containerSearch>label[for="TotMesUnidadeText"]{
+		#containerSearch>form>label[for="TotMesUnidadeText"]{
 			grid-column: 8/9;
 			grid-row: 2;
 			display: flex;
@@ -57,6 +57,7 @@
 		width: 70%;
 		height: 50%;
 		margin-left: 5px;
+		font-size: 12px;
 	}
 
 /*containerTotMesUnidade*/
@@ -70,5 +71,6 @@
 	.containerTotMesUnidade input{
 		width: 70%;
 		height: 50%;
+		font-size: 12px;
 		margin-left: 5px;
 	}

@@ -18,28 +18,30 @@
 		</div>
 	</div>
 
-	<!-- SEARCH BOX -->
-	<div class="container p-2 rounded shadow-lg" id="containerSearch">
-		<!-- SELECT VENDEDORA -->
-		<label class="lead text-white text-center fw-bold me-3" for="vendedorasSelect">Vendedora: </label>
-		<div class="containerSelect">
-			<select name="vendedorasSelect" id="vendedorasSelect" class="form-select">
-				<option value="">Vendedora 1</option>
-				<option value="">Vendedora 2</option>
-				<option value="">Vendedora 3</option>
-				<option selected hidden value="">Escolha...</option>
-			</select>
-		</div>
-		<!-- All Sells Month BRL-->
-		<label class="lead text-white text-center fw-bold me-3" for="totMesText">Mês: </label>
-		<div class="containerTotMes">
-			<input class="form-control" disabled type="text" name="totMesText" id="totMesText">
-		</div>
-		<!-- All Sells in Units-->
-		<label class="lead text-white text-center fw-bold me-3" for="TotMesUnidadeText">Vendas: </label>
-		<div class="containerTotMesUnidade">
-			<input class="form-control" disabled type="text" name="TotMesUnidadeText" id="TotMesUnidadeText">
-		</div>
+	<!-- Caixa de Pesquisa -->
+	<div class="container p-0 shadow-lg" id="containerSearch">
+		<form action="/formConsulta" method="post" class="rounded">
+			<!-- Seleção de Vendedora -->
+			<label class="lead text-white text-center fw-bold me-3" for="vendedorasSelect">Vendedora: </label>
+			<div class="containerSelect">
+				<select name="vendedorasSelect" id="vendedorasSelect" class="form-select">
+					<option value="">Vendedora 1</option>
+					<option value="">Vendedora 2</option>
+					<option value="">Vendedora 3</option>
+					<option selected hidden value="">Escolha...</option>
+				</select>
+			</div>
+			<!-- Todas as Vendas do mês-->
+			<label class="lead text-white text-center fw-bold me-3" for="totMesText">Mês: </label>
+			<div class="containerTotMes">
+				<input disabled class="form-control" type="text" value="<%= mesAtual %> " name="totMesText" id="totMesText">
+			</div>
+			<!-- Quantidade de Vendas do mês-->
+			<label class="lead text-white text-center fw-bold me-3" for="TotMesUnidadeText">Vendas: </label>
+			<div class="containerTotMesUnidade">
+				<input disabled class="form-control" type="text" value="<%= valorQt %> " name="TotMesUnidadeText" id="TotMesUnidadeText">
+			</div>
+		</form>
 	</div>
 
 </body>
