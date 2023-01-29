@@ -4,7 +4,8 @@
 	const port = 3333
 
 // Import Router
-const categoriesController = require("./categories/CategoriesController")
+	const categoriesController = require("./categories/CategoriesController");
+	const screenConsultController = require("./screenConsult/screenConsultController");
 
 //CONFIG
 	//ejs
@@ -15,20 +16,17 @@ const categoriesController = require("./categories/CategoriesController")
 	//sequelize
 		const dataInfo = require("./models/dataInfo");
 
-//ROOTS
+//Roots
 	app.use("/", categoriesController);
+	app.use("/", screenConsultController);
 
-	app.get("/consulta", (req,res)=>{
-		res.render("consulta");
-	});
-
-//SEQUELIZE
-	//connection
-		const Sequelize = require("sequelize");
-		const connection = new Sequelize(dataInfo.name, dataInfo.user, dataInfo.password, {
-			host: dataInfo.host,
-			dialect: dataInfo.dialect,
-		});
+// //SEQUELIZE
+// 	//connection
+// 		const Sequelize = require("sequelize");
+// 		const connection = new Sequelize(dataInfo.name, dataInfo.user, dataInfo.password, {
+// 			host: dataInfo.host,
+// 			dialect: dataInfo.dialect,
+// 		});
 
 //ON SERVER
 	app.listen(port, ()=>{
